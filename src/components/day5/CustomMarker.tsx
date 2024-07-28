@@ -1,16 +1,6 @@
 import { View, Text } from 'react-native';
 import { Marker } from 'react-native-maps';
 
-// type apartmentProps = {
-//       id: string,
-//       latitude: number,
-//       longitude: number,
-//       price: number,
-//       title: string,
-//       numberOfStars: number,
-//       rating: string,
-//       image: string,
-// }
 
 const CustomMarker = ({ apartment, handlePress }: any) => {
   return (
