@@ -1,0 +1,103 @@
+[
+      {
+        "id": "1",
+        "latitude": 37.774929,
+        "longitude": -122.419418,
+        "price": 150,
+        "title": "Charming Victorian Home",
+        "numberOfStars": 4.7,
+        "rating": 4.8,
+        "image": "https://a0.muscache.com/im/pictures/prohost-api/Hosting-21721747/original/44b38914-9c1a-44d9-888c-c0e4fbdc4b3e.jpeg?im_w=960"
+      },
+      {
+        "id": "2",
+        "latitude": 37.779026,
+        "longitude": -122.419906,
+        "price": 180,
+        "title": "Modern Loft in SoMa",
+        "numberOfStars": 4.8,
+        "rating": 4.9,
+        "image": "https://a0.muscache.com/im/pictures/prohost-api/Hosting-21721747/original/19a65da3-ad40-4462-8f6b-52419a48870c.jpeg?im_w=1200"
+      },
+      {
+        "id": "3",
+        "latitude": 37.769040,
+        "longitude": -122.483519,
+        "price": 140,
+        "title": "Cozy Apartment Near Golden Gate Park",
+        "numberOfStars": 4.5,
+        "rating": 4.6,
+        "image": "https://a0.muscache.com/im/pictures/prohost-api/Hosting-21721747/original/4a50d2a1-1bfe-4d08-8055-e8bbe334903a.jpeg?im_w=1200"
+      },
+      {
+        "id": "4",
+        "latitude": 37.798215,
+        "longitude": -122.405467,
+        "price": 160,
+        "title": "Elegant Suite with Bay Views",
+        "numberOfStars": 4.6,
+        "rating": 4.7,
+        "image": "https://a0.muscache.com/im/pictures/prohost-api/Hosting-21721747/original/535e9d5e-a36b-46c4-a9d3-646a64822275.jpeg?im_w=1200"
+      },
+      {
+        "id": "5",
+        "latitude": 37.795691,
+        "longitude": -122.393226,
+        "price": 130,
+        "title": "Stylish Condo in Financial District",
+        "numberOfStars": 4.4,
+        "rating": 4.5,
+        "image": "https://a0.muscache.com/im/pictures/prohost-api/Hosting-21721747/original/52f61ef7-191f-48ea-ac40-87b21a58f504.jpeg?im_w=1200"
+      },
+      {
+        "id": "6",
+        "latitude": 37.743564,
+        "longitude": -122.473704,
+        "price": 120,
+        "title": "Bright Studio in Outer Richmond",
+        "numberOfStars": 4.3,
+        "rating": 4.4,
+        "image": "https://a0.muscache.com/im/pictures/prohost-api/Hosting-21721747/original/baba7788-6de2-458c-8027-a52338ff383a.jpeg?im_w=1200"
+      },
+      {
+        "id": "7",
+        "latitude": 37.803997,
+        "longitude": -122.411575,
+        "price": 170,
+        "title": "Luxurious Apartment with Rooftop Access",
+        "numberOfStars": 4.9,
+        "rating": 4.8,
+        "image": "https://a0.muscache.com/im/pictures/prohost-api/Hosting-21721747/original/44162105-5f2b-4cd3-a1af-46095d44d0cd.jpeg?im_w=1200"
+      },
+      {
+        "id": "8",
+        "latitude": 37.763222,
+        "longitude": -122.422788,
+        "price": 140,
+        "title": "Comfortable Flat in Noe Valley",
+        "numberOfStars": 4.6,
+        "rating": 4.6,
+        "image": "https://a0.muscache.com/im/pictures/prohost-api/Hosting-21721747/original/1e742835-b96d-4d23-af2b-232277c22223.jpeg?im_w=1200"
+      },
+      {
+        "id": "9",
+        "latitude": 37.732345,
+        "longitude": -122.485696,
+        "price": 110,
+        "title": "Quaint Apartment with Garden",
+        "numberOfStars": 4.2,
+        "rating": 4.3,
+        "image": "https://a0.muscache.com/im/pictures/prohost-api/Hosting-21721747/original/83cc619a-88b4-4201-ac43-b946d8f76620.jpeg?im_w=1200"
+      },
+      {
+        "id": "10",
+        "latitude": 37.804760,
+        "longitude": -122.405428,
+        "price": 155,
+        "title": "Luxury Flat Near Union Square",
+        "numberOfStars": 4.8,
+        "rating": 4.7,
+        "image": "https://a0.muscache.com/im/pictures/prohost-api/Hosting-21721747/original/acfb3b8a-a7c2-47c2-a55d-cf2ee8fa9604.jpeg?im_w=1200"
+      }
+    ]
+    
