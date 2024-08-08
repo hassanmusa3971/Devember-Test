@@ -4,6 +4,7 @@ import { AmaticSC_400Regular, AmaticSC_700Bold } from '@expo-google-fonts/amatic
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import BiometricProvider from '@/components/day10/BiometricsProvider';
 
 // Keep the splash screen visible while we fetch resources
 SplashScreen.preventAutoHideAsync();
@@ -28,11 +29,13 @@ const RootLayout = () => {
   }
   
   return (
+    <BiometricProvider>
     <GestureHandlerRootView style={{ flex: 1}}>
    <Stack>
     <Stack.Screen name='index' options={{ title: "DEVember"}} />
    </Stack>
    </GestureHandlerRootView>
+   </BiometricProvider>
   )
 }
 
