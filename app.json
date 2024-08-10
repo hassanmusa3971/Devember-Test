@@ -51,6 +51,12 @@
         {
           "faceIDPermission": "Allow $(PRODUCT_NAME) to use Face ID to unlock secret info."
         }
+      ],
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Allow $(PRODUCT_NAME) to use your location."
+        }
       ]
     ],
     "extra": {
