@@ -3,20 +3,28 @@ import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
 import { useCallback, useEffect, useState } from "react";
 import { Audio, AVPlaybackStatus } from "expo-av";
 import { Sound } from "expo-av/build/Audio";
-import Animated, { useAnimatedStyle, withTiming } from "react-native-reanimated";
+import Animated, {
+  interpolate,
+  useAnimatedStyle,
+  withTiming
+} from "react-native-reanimated";
+import { Memo } from "@/app/(days)/day7/memos";
 
-const MemoListItem = ({ uri }: { uri: string }) => {
+const MemoListItem = ({ memo }: { memo: Memo }) => {
   const [sound, setSound] = useState<Sound>();
   const [status, setStatus] = useState<AVPlaybackStatus>();
 
   async function loadSound() {
     console.log("Loading Sound");
     const { sound } = await Audio.Sound.createAsync(
-      { uri },
-      {progressUpdateIntervalMillis: 1000 / 60},
+      { uri: memo.uri },
+      { progressUpdateIntervalMillis: 1000 / 60 },
       onPlaybackStatusUpdate
     );
     setSound(sound);
+    sound.setOnAudioSampleReceived((sample) => {
+      // console.log(JSON.stringify(sample, null, 2))
+    });
   }
 
   const onPlaybackStatusUpdate = useCallback(
@@ -33,7 +41,7 @@ const MemoListItem = ({ uri }: { uri: string }) => {
   );
   useEffect(() => {
     loadSound();
-  }, [uri]);
+  }, [memo]);
 
   async function playSound() {
     console.log("Playing Sound");
@@ -59,7 +67,7 @@ const MemoListItem = ({ uri }: { uri: string }) => {
   const formatMillis = (millis: number) => {
     const minutes = Math.floor(millis / (1000 * 60));
     const seconds = Math.floor((millis % (1000 * 60)) / 1000);
-    return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+    return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
   };
 
   const isPlaying = status?.isLoaded ? status.isPlaying : false;
@@ -68,8 +76,23 @@ const MemoListItem = ({ uri }: { uri: string }) => {
   const progress = position / duration;
 
   const animatedIndicatorStyle = useAnimatedStyle(() => ({
-      left:`${progress * 100}%`, 
-  }))
+    left: `${progress * 100}%`
+  }));
+
+  //const lines = memo.metering.slice(0,10)
+  let lines = []
+  let numLines = 50
+
+  for(let i = 0; i<numLines; i++){
+    const meteringIndex = Math.floor((i * memo.metering.length) / numLines)
+    const nextMeteringIndex = Math.ceil(((i + 1) * memo.metering.length) / numLines)
+    const values = memo.metering.slice(meteringIndex, nextMeteringIndex)
+    const average = values.reduce((sum , a) => sum + a, 0) / values.length
+    lines.push(average)
+  }
+  memo.metering.forEach((db, index) => {
+
+  })
   return (
     <View style={styles.container}>
       <FontAwesome5
@@ -79,7 +102,17 @@ const MemoListItem = ({ uri }: { uri: string }) => {
         color="gray"
       />
       <View style={styles.playbackContainer}>
-        <View style={styles.playbackBackground} />
+        {/* <View style={styles.playbackBackground} /> */}
+        <View style={styles.wave}>
+          {lines.map((db) => (
+            <View
+              style={[
+                styles.waveLine,
+                { height: interpolate(db, [-60, 0], [5, 50]) }
+              ]}
+            />
+          ))}
+        </View>
         <Animated.View
           style={[styles.playbackIndicator, animatedIndicatorStyle]}
         />
@@ -137,6 +170,17 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     backgroundColor: "royalblue",
     position: "absolute"
+  },
+  wave: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 3
+  },
+  waveLine: {
+    flex: 1,
+    height: 50,
+    backgroundColor: "gainsboro",
+    borderRadius: 20
   }
 });
 
